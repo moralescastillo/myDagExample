@@ -26,7 +26,7 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
   }
 
-dag = DAG('send_email_morning', 
+dag = DAG('bash_python_dag_example', 
           default_args=default_args,
           schedule_interval= '0 0 * * *')
 
