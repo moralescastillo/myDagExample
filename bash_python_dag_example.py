@@ -25,7 +25,7 @@ default_args = {
 
 dag = DAG('bash_python_dag_example', 
           default_args=default_args,
-          schedule_interval= '0 0 * * *')
+          schedule_interval= '@daily')
 
 t1 = BashOperator(
     task_id='hello_world_print',
