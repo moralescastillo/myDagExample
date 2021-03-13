@@ -11,7 +11,7 @@ seven_days_ago = (datetime.combine(datetime.today() - timedelta(7),
 
 def print_current_timestamp():
     
-    current_time = datetime.today()
+    current_time = datetime.today().strftime("%Y-%m-%d, %H:%M:%S")
     
     return current_time
 
@@ -40,6 +40,3 @@ t2 = PythonOperator(
 ## dependencies
 
 t1 >> t2
-
-
-print_current_timestamp()
