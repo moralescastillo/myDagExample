@@ -6,7 +6,7 @@ from airflow.operators.python_operator import PythonOperator
 
 from datetime import datetime, timedelta
 
-seven_days_ago = (datetime.combine(datetime.today() - timedelta(7), 
+one_day_ago = (datetime.combine(datetime.today() - timedelta(1), 
 					datetime.min.time()))
 
 def print_current_timestamp():
@@ -18,7 +18,7 @@ def print_current_timestamp():
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': seven_days_ago,
+    'start_date': one_day_ago,
     'retries': 1,
     'retry_delay': timedelta(minutes=5)
   }
