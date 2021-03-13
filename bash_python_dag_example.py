@@ -14,7 +14,7 @@ def print_current_timestamp():
     return print(datetime.today())
 
 def print_context(ds, **kwargs):
-    pprint(kwargs)
+    print(kwargs)
     print(ds)
     return 'Whatever you return gets printed in the logs'
 
@@ -43,6 +43,3 @@ t2 = PythonOperator(
 ## dependencies
 
 t1 >> t2
-
-
-print_current_timestamp()
