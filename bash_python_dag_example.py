@@ -11,12 +11,9 @@ seven_days_ago = (datetime.combine(datetime.today() - timedelta(7),
 
 def print_current_timestamp():
     
-    return print(datetime.today())
-
-def print_context(ds, **kwargs):
-    print(kwargs)
-    print(ds)
-    return 'Whatever you return gets printed in the logs'
+    current_time = datetime.today()
+    
+    return current_time
 
 default_args = {
     'owner': 'airflow',
@@ -37,9 +34,12 @@ t1 = BashOperator(
 
 t2 = PythonOperator(
     task_id = 'current_timestamp_print',
-    python_callable = print_context,
+    python_callable = print_current_timestamp,
     dag=dag)
 
 ## dependencies
 
 t1 >> t2
+
+
+print_current_timestamp()
